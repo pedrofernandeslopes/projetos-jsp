@@ -12,7 +12,7 @@ public class ManagerConnection {
 		String password = "12345";
 
 		try {
-			// conexão com BD
+			// conexão com BD via driver
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(url, user, password);
 		} catch (Exception e) {

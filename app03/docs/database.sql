@@ -1,6 +1,7 @@
-CREATE TABLE usuario(
+CREATE TABLE usuario1(
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	nome VARCHAR(80),
 	login VARCHAR(50),
 	funcao VARCHAR(50)
 );
+--COMENTARIO

@@ -13,14 +13,14 @@ import com.rpnet.model.Usuario;
 /**
  * Servlet implementation class UsuarioController
  */
-@WebServlet("/usuario")
-public class UsuarioController extends HttpServlet {
+@WebServlet("/logica.usuario")
+public class UsuarioController1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public UsuarioController() {
+	public UsuarioController1() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -69,7 +69,9 @@ public class UsuarioController extends HttpServlet {
 		//uDAO.save(u);
 
 		switch (opt) {
-		case "load":			
+		case "load":
+			u = uDAO.load(id);
+			request.setAttribute("usuario", u);
 			break;
 		case "save":
 			uDAO.save(u);
@@ -86,7 +88,8 @@ public class UsuarioController extends HttpServlet {
 		}
 
 		// aqui redireciona para a pagina de cadastros para novos cadastros
-		response.sendRedirect("index.jsp");
+		//response.sendRedirect("usuario.jsp");
+		request.getRequestDispatcher("usuario.jsp").forward(request, response);
 
 	}
 
